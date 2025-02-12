@@ -8,7 +8,7 @@ header {
   color: white;
 }
 
-.container {
+.container-header {
   max-width: 75rem;
   margin: auto;
   display: flex;
@@ -22,4 +22,39 @@ header input {
   background-color: white;
   color: black;
   margin-right: 0.625rem;
+}
+
+/**************
+MAIN
+**************/
+
+main {
+  background-color: gray;
+}
+
+.container-main {
+  max-width: 75rem;
+  margin: auto;
+  display: flex;
+
+  padding-bottom: 1.875rem;
+}
+
+.col {
+  width: calc(100 / 5);
+}
+
+.row {
+  display: flex;
+}
+
+.container-title h2 {
+  font-size: 2.125rem;
+}
+
+.container-title {
+  max-width: 75rem;
+  margin: auto;
+  padding-top: 1.875rem;
+  padding-bottom: 1.25rem;
 }

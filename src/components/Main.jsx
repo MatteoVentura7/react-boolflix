@@ -7,55 +7,40 @@ export default function Main() {
 
   return (
     <main>
-      <h2>Lista Films</h2>
-      <ul>
-        {movies.map((movie) => (
-          <li key={movie.id}>
-            {" "}
-            <img
-              src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
-              alt=""
-            />
-            title: {movie.title} <br /> title original: {movie.original_title}{" "}
-            <br />{" "}
-            {langs.includes(movie.original_language) ? (
+      <div className="container-title">
+        <h2 className="text-white">LISTA FILMS</h2>
+      </div>
+
+      <div className="container-main">
+        <div className="grid grid-cols-3 gap-8">
+          {movies.map((movie) => (
+            <div key={movie.id}>
+              {" "}
               <img
-                src={`/img/${movie.original_language}.png`}
-                alt={movie.original_language}
+                src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
+                alt="nuul"
               />
-            ) : (
-              <p>Lingua: {movie.original_language}</p>
-            )}{" "}
-            <br />
-            Voto: {Math.ceil(movie.vote_average / 2)}
-            <i class="fa-solid fa-star"></i>
-          </li>
-        ))}
-      </ul>
-      <h2>Lista serie</h2>
-      <ul>
-        {series.map((serie) => (
-          <li key={serie.id}>
-            <img
-              src={`https://image.tmdb.org/t/p/w342/${serie.poster_path}`}
-              alt=""
-            />
-            title: {serie.name} <br /> title original: {serie.original_name}{" "}
-            <br />{" "}
-            {langs.includes(serie.original_language) ? (
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="container-title">
+        <h2 className="text-white">LISTA SERIE TV</h2>
+      </div>
+
+      <div className="container-main">
+        <div className="grid grid-cols-3 gap-8">
+          {series.map((serie) => (
+            <div key={serie.id}>
+              {" "}
               <img
-                src={`/img/${serie.original_language}.png`}
-                alt={serie.original_language}
+                src={`https://image.tmdb.org/t/p/w342/${serie.poster_path}`}
+                alt="null"
               />
-            ) : (
-              <p>Lingua: {serie.original_language}</p>
-            )}{" "}
-            <br />
-            Voto: {Math.ceil(serie.vote_average / 2)}
-            <i class="fa-solid fa-star"></i>
-          </li>
-        ))}
-      </ul>
+            </div>
+          ))}
+        </div>
+      </div>
     </main>
   );
 }
