@@ -2,8 +2,10 @@ import SearchBar from "./SearchBar";
 export default function Header() {
   return (
     <header>
-      <h1>Booflix</h1>
-      <SearchBar />
+      <div className="container">
+        <img src="public\img\logo.png" alt="" />
+        <SearchBar />
+      </div>
     </header>
   );
 }

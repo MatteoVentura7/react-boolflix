@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/**************
+HEADER
+**************/
+header {
+  background-color: black;
+  color: white;
+}
+
+.container {
+  max-width: 75rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.875rem;
+  padding-bottom: 1.875rem;
+}
+
+header input {
+  background-color: white;
+  color: black;
+  margin-right: 0.625rem;
+}

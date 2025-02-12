@@ -27,7 +27,8 @@ export default function Main() {
               <p>Lingua: {movie.original_language}</p>
             )}{" "}
             <br />
-            Voto: {movie.vote_average}
+            Voto: {Math.ceil(movie.vote_average / 2)}
+            <i class="fa-solid fa-star"></i>
           </li>
         ))}
       </ul>
@@ -50,7 +51,8 @@ export default function Main() {
               <p>Lingua: {serie.original_language}</p>
             )}{" "}
             <br />
-            Voto: {serie.vote_average}
+            Voto: {Math.ceil(serie.vote_average / 2)}
+            <i class="fa-solid fa-star"></i>
           </li>
         ))}
       </ul>
