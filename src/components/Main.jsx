@@ -3,7 +3,7 @@ import { useAppDataContext } from "../contexts/AppDataContext";
 export default function Main() {
   const { movies } = useAppDataContext();
   const { series } = useAppDataContext();
-  const langs = ["it", "us", "gb", "es", "fr"];
+  const langs = ["it", "us", "gb", "es", "fr", "en"];
 
   return (
     <main>
@@ -17,7 +17,6 @@ export default function Main() {
               <img
                 src={`/img/${movie.original_language}.png`}
                 alt={movie.original_language}
-                className="w-25 rounded-pill"
               />
             ) : (
               <p>Lingua: {movie.original_language}</p>
@@ -37,7 +36,6 @@ export default function Main() {
               <img
                 src={`/img/${serie.original_language}.png`}
                 alt={serie.original_language}
-                className="w-25 rounded-pill"
               />
             ) : (
               <p>Lingua: {serie.original_language}</p>
