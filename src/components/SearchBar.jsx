@@ -6,6 +6,7 @@ export default function SearchBar() {
   const [search, setSearch] = useState("");
 
   const { setMovies } = useAppDataContext();
+  const { setSeries } = useAppDataContext();
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -19,6 +20,16 @@ export default function SearchBar() {
         },
       })
       .then((res) => setMovies(res.data.results));
+    axios
+
+      .get("https://api.themoviedb.org/3/search/tv", {
+        params: {
+          api_key: "cbd270e659f0872844ade5cf92879963",
+          language: "it-IT",
+          query: search,
+        },
+      })
+      .then((res) => setSeries(res.data.results));
   };
 
   return (
