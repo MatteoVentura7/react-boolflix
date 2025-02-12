@@ -11,6 +11,11 @@ export default function Main() {
       <ul>
         {movies.map((movie) => (
           <li key={movie.id}>
+            {" "}
+            <img
+              src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
+              alt=""
+            />
             title: {movie.title} <br /> title original: {movie.original_title}{" "}
             <br />{" "}
             {langs.includes(movie.original_language) ? (
@@ -30,6 +35,10 @@ export default function Main() {
       <ul>
         {series.map((serie) => (
           <li key={serie.id}>
+            <img
+              src={`https://image.tmdb.org/t/p/w342/${serie.poster_path}`}
+              alt=""
+            />
             title: {serie.name} <br /> title original: {serie.original_name}{" "}
             <br />{" "}
             {langs.includes(serie.original_language) ? (
