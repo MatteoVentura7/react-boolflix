@@ -5,7 +5,7 @@ const AppDataContext = createContext();
 
 // 2️⃣ Definisco un custom Provider (ovvero colui che trasmette i dati da condividere)
 function AppDataProvider({ children }) {
-  // aggiungere lo stato movies da condividere
+  // aggiungere lo stato movies e series da condividere
   const [movies, setMovies] = useState([]);
   const [series, setSeries] = useState([]);
 

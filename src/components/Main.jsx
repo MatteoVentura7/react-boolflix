@@ -3,6 +3,7 @@ import { useAppDataContext } from "../contexts/AppDataContext";
 export default function Main() {
   const { movies } = useAppDataContext();
   const { series } = useAppDataContext();
+  const langs = ["it", "us", "gb", "es", "fr"];
 
   return (
     <main>
@@ -11,7 +12,17 @@ export default function Main() {
         {movies.map((movie) => (
           <li key={movie.id}>
             title: {movie.title} <br /> title original: {movie.original_title}{" "}
-            <br /> language: {movie.original_language} <br />
+            <br />{" "}
+            {langs.includes(movie.original_language) ? (
+              <img
+                src={`/img/${movie.original_language}.png`}
+                alt={movie.original_language}
+                className="w-25 rounded-pill"
+              />
+            ) : (
+              <p>Lingua: {movie.original_language}</p>
+            )}{" "}
+            <br />
             Voto: {movie.vote_average}
           </li>
         ))}
@@ -21,7 +32,17 @@ export default function Main() {
         {series.map((serie) => (
           <li key={serie.id}>
             title: {serie.name} <br /> title original: {serie.original_name}{" "}
-            <br /> language: {serie.original_language} <br />
+            <br />{" "}
+            {langs.includes(serie.original_language) ? (
+              <img
+                src={`/img/${serie.original_language}.png`}
+                alt={serie.original_language}
+                className="w-25 rounded-pill"
+              />
+            ) : (
+              <p>Lingua: {serie.original_language}</p>
+            )}{" "}
+            <br />
             Voto: {serie.vote_average}
           </li>
         ))}
