@@ -45,6 +45,7 @@ export default function Main() {
           ))}
         </div>
       </div>
+
       <div className="container-title">
         <h2 className="text-white">LISTA SERIE TV</h2>
       </div>
@@ -52,12 +53,33 @@ export default function Main() {
       <div className="container-main">
         <div className="grid grid-cols-3 gap-8">
           {series.map((serie) => (
-            <div key={serie.id}>
+            <div className="movie" key={serie.id}>
               {" "}
               <img
                 src={`https://image.tmdb.org/t/p/w342/${serie.poster_path}`}
                 alt="null"
+                style={{
+                  obejctFit: "cover",
+                  width: "100%",
+                  height: "100%",
+                }}
               />
+              <div className="overlay">
+                {" "}
+                title: {serie.title} <br /> title original:{" "}
+                {serie.original_title} <br />
+                Voto: {Math.ceil(serie.vote_average / 2)} <br />
+                overview: {serie.overview}
+                {langs.includes(serie.original_language) ? (
+                  <img
+                    className="flag-img"
+                    src={`/img/${serie.original_language}.png`}
+                    alt={serie.original_language}
+                  />
+                ) : (
+                  <p>Lingua: {serie.original_language}</p>
+                )}{" "}
+              </div>
             </div>
           ))}
         </div>
