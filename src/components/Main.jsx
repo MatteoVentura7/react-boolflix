@@ -14,7 +14,7 @@ export default function Main() {
       <div className="container-main">
         <div className="grid grid-cols-3 gap-8">
           {movies.map((movie) => (
-            <div key={movie.id}>
+            <div className="movie" key={movie.id}>
               {" "}
               <img
                 src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
@@ -25,22 +25,22 @@ export default function Main() {
                   height: "100%",
                 }}
               />
-              {/* <div>
+              <div className="overlay">
                 {" "}
                 title: {movie.title} <br /> title original:{" "}
-                {movie.original_title} <br />{" "}
+                {movie.original_title} <br />
+                Voto: {Math.ceil(movie.vote_average / 2)} <br />
+                overview: {movie.overview}
                 {langs.includes(movie.original_language) ? (
                   <img
+                    className="flag-img"
                     src={`/img/${movie.original_language}.png`}
                     alt={movie.original_language}
                   />
                 ) : (
                   <p>Lingua: {movie.original_language}</p>
                 )}{" "}
-                <br />
-                Voto: {Math.ceil(movie.vote_average / 2)}
-                <i class="fa-solid fa-star"></i>
-              </div> */}
+              </div>
             </div>
           ))}
         </div>
