@@ -23,9 +23,16 @@ header {
 }
 
 header input {
-  background-color: white;
-  color: black;
+  background-color: transparent;
+  color: #99a1af;
   margin-right: 0.625rem;
+  border: 2px solid transparent;
+}
+
+header input:focus {
+  outline: none;
+  border-bottom: 2px solid #dc1a28;
+  background-color: transparent;
 }
 
 .avatar {
@@ -123,4 +130,38 @@ main {
 .overlay p {
   font-size: 0.625rem;
   padding-bottom: 0.625rem;
+}
+
+/*----------------
+    RESPONSIVE
+------------------*/
+
+/* DA 576px a 0px */
+@media screen and (max-width: 25rem) {
+}
+
+/* DA 650px a 0px */
+@media screen and (max-width: 40.625rem) {
+  .container-header {
+    max-width: 93.75rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.875rem;
+    padding-bottom: 1.875rem;
+  }
+
+  .md-respo {
+    margin-bottom: 1.875rem;
+  }
+
+  .container-main {
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
+  }
+  .container-title {
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
+  }
 }
