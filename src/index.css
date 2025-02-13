@@ -41,6 +41,7 @@ header input:focus {
 }
 form {
   display: flex;
+  align-items: center;
 }
 
 /**************
