@@ -17,8 +17,17 @@ export default function Main() {
 
   return (
     <main>
-      <div className="container-title">
+      <div className="container-title text-gray-400">
         <h2 className="text-white">Film</h2>
+        {movies.length ? null : (
+          <p>
+            Non ci sono film corrispondenti
+            <i
+              className="fa-solid fa-face-frown"
+              style={{ marginLeft: "8px", color: "#99A1AF" }}
+            ></i>
+          </p>
+        )}
       </div>
 
       <div className="container-main">
@@ -27,6 +36,7 @@ export default function Main() {
             <div className="movie" key={movie.id}>
               <img
                 src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
+                onError={(e) => (e.target.src = "/img/placeholder.jpg")}
                 alt="nuul"
                 style={{
                   obejctFit: "cover",
@@ -44,7 +54,7 @@ export default function Main() {
                 <p className="text-wrap pt-2.5">{movie.overview}</p>
                 {langs.includes(movie.original_language) ? (
                   <img
-                    className="flag-img mt-2"
+                    className="flag-img mt-2 mb-4"
                     src={`/img/${movie.original_language}.png`}
                     alt={movie.original_language}
                   />
@@ -57,8 +67,17 @@ export default function Main() {
         </div>
       </div>
 
-      <div className="container-title">
+      <div className="container-title text-gray-400">
         <h2 className="text-white">Serie</h2>
+        {series.length ? null : (
+          <p>
+            Non ci sono serie tv corrispondenti
+            <i
+              className="fa-solid fa-face-frown"
+              style={{ marginLeft: "8px", color: "#99A1AF" }}
+            ></i>
+          </p>
+        )}
       </div>
 
       <div className="container-main">
@@ -85,7 +104,7 @@ export default function Main() {
                 <p className="text-wrap pt-2.5">{serie.overview}</p>
                 {langs.includes(serie.original_language) ? (
                   <img
-                    className="flag-img mt-2"
+                    className="flag-img mt-2 mb-4"
                     src={`/img/${serie.original_language}.png`}
                     alt={serie.original_language}
                   />
