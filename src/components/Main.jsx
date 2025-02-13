@@ -18,14 +18,13 @@ export default function Main() {
   return (
     <main>
       <div className="container-title">
-        <h2 className="text-white">LISTA FILMS</h2>
+        <h2 className="text-white">Film</h2>
       </div>
 
       <div className="container-main">
         <div className="grid gap-8 movie-card">
           {movies.map((movie) => (
             <div className="movie" key={movie.id}>
-              {" "}
               <img
                 src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
                 alt="nuul"
@@ -35,17 +34,17 @@ export default function Main() {
                   height: "100%",
                 }}
               />
-              <div className="overlay">
+              <div className="overlay text-wrap">
                 {" "}
-                title: {movie.title} <br /> title original:{" "}
-                {movie.original_title} <br />
+                <h1>{movie.title}</h1>{" "}
+                <p className="text-gray-500">{movie.original_title}</p>
                 <div className="stars">
-                  Voto: {voteInStars(Math.ceil(movie.vote_average / 2))} <br />
+                  {voteInStars(Math.ceil(movie.vote_average / 2))}
                 </div>
-                <p className="text-wrap">overview: {movie.overview}</p>
+                <p className="text-wrap pt-2.5">{movie.overview}</p>
                 {langs.includes(movie.original_language) ? (
                   <img
-                    className="flag-img"
+                    className="flag-img mt-2"
                     src={`/img/${movie.original_language}.png`}
                     alt={movie.original_language}
                   />
@@ -59,7 +58,7 @@ export default function Main() {
       </div>
 
       <div className="container-title">
-        <h2 className="text-white">LISTA SERIE TV</h2>
+        <h2 className="text-white">Serie</h2>
       </div>
 
       <div className="container-main">
@@ -76,17 +75,17 @@ export default function Main() {
                   height: "100%",
                 }}
               />
-              <div className="overlay">
+              <div className="overlay text-wrap">
                 {" "}
-                title: {serie.name} <br /> title original: {serie.original_name}{" "}
-                <br />
+                <h1>{serie.name}</h1>{" "}
+                <p className="text-gray-500">{serie.original_name}</p>
                 <div className="stars">
-                  Voto: {voteInStars(Math.ceil(serie.vote_average / 2))} <br />
+                  {voteInStars(Math.ceil(serie.vote_average / 2))}
                 </div>
-                <p className="text-wrap">overview: {serie.overview}</p>
+                <p className="text-wrap pt-2.5">{serie.overview}</p>
                 {langs.includes(serie.original_language) ? (
                   <img
-                    className="flag-img"
+                    className="flag-img mt-2"
                     src={`/img/${serie.original_language}.png`}
                     alt={serie.original_language}
                   />

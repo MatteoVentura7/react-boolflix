@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 /**************
 HEADER
 **************/
@@ -24,12 +28,21 @@ header input {
   margin-right: 0.625rem;
 }
 
+.avatar {
+  margin-left: 1.25rem;
+  width: 1.875rem;
+}
+form {
+  display: flex;
+}
+
 /**************
 MAIN
 **************/
 
 main {
-  background-color: gray;
+  background-color: #222;
+
   padding-bottom: 3.125rem;
 }
 
@@ -43,7 +56,7 @@ main {
   white-space: nowrap; /* Impedisce il ritorno a capo */
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: red #222;
+  scrollbar-color: black gray;
 }
 
 .row {
@@ -51,7 +64,7 @@ main {
 }
 
 .container-title h2 {
-  font-size: 2.125rem;
+  font-size: 40px;
 }
 
 .container-title {
@@ -97,4 +110,13 @@ main {
 
 .movie-card {
   display: flex;
+}
+
+.overlay h1 {
+  font-size: 1.5rem;
+}
+
+.overlay p {
+  font-size: 0.75rem;
+  padding-bottom: 0.625rem;
 }

@@ -41,7 +41,10 @@ export default function SearchBar() {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <button type="submit">Cerca</button>
+      <button type="submit">
+        <i className="fa-solid fa-magnifying-glass color: #ffffff"></i>
+      </button>
+      <img className="avatar" src="public\img\Netflix-avatar.png" alt="" />
     </form>
   );
 }
