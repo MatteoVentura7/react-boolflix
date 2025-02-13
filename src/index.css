@@ -9,7 +9,7 @@ header {
 }
 
 .container-header {
-  max-width: 75rem;
+  max-width: 93.75rem;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -30,18 +30,20 @@ MAIN
 
 main {
   background-color: gray;
+  padding-bottom: 3.125rem;
 }
 
 .container-main {
-  max-width: 75rem;
+  max-width: 93.75rem;
   margin: auto;
   display: flex;
-
   padding-bottom: 1.875rem;
-}
-
-.col {
-  width: calc(100 / 5);
+  overflow-x: auto; /* Abilita lo scrolling orizzontale */
+  overflow-y: hidden; /* Nasconde lo scrolling verticale */
+  white-space: nowrap; /* Impedisce il ritorno a capo */
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: red #222;
 }
 
 .row {
@@ -53,7 +55,7 @@ main {
 }
 
 .container-title {
-  max-width: 75rem;
+  max-width: 93.75rem;
   margin: auto;
   padding-top: 1.875rem;
   padding-bottom: 1.25rem;
@@ -91,4 +93,8 @@ main {
 
 .flag-img {
   width: 3.125rem;
+}
+
+.movie-card {
+  display: flex;
 }

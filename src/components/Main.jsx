@@ -4,6 +4,16 @@ export default function Main() {
   const { movies } = useAppDataContext();
   const { series } = useAppDataContext();
   const langs = ["it", "us", "gb", "es", "fr", "en"];
+  const voteInStars = (num) => {
+    let stars = [];
+    for (let i = 0; i < num; i++) {
+      stars.push(<i key={i} className="fa-solid fa-star"></i>);
+    }
+    for (let i = num; i < 5; i++) {
+      stars.push(<i key={i} className="fa-regular fa-star"></i>);
+    }
+    return stars;
+  };
 
   return (
     <main>
@@ -12,7 +22,7 @@ export default function Main() {
       </div>
 
       <div className="container-main">
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid gap-8 movie-card">
           {movies.map((movie) => (
             <div className="movie" key={movie.id}>
               {" "}
@@ -29,8 +39,10 @@ export default function Main() {
                 {" "}
                 title: {movie.title} <br /> title original:{" "}
                 {movie.original_title} <br />
-                Voto: {Math.ceil(movie.vote_average / 2)} <br />
-                overview: {movie.overview}
+                <div className="stars">
+                  Voto: {voteInStars(Math.ceil(movie.vote_average / 2))} <br />
+                </div>
+                <p className="text-wrap">overview: {movie.overview}</p>
                 {langs.includes(movie.original_language) ? (
                   <img
                     className="flag-img"
@@ -51,7 +63,7 @@ export default function Main() {
       </div>
 
       <div className="container-main">
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid gap-8 movie-card">
           {series.map((serie) => (
             <div className="movie" key={serie.id}>
               {" "}
@@ -66,10 +78,12 @@ export default function Main() {
               />
               <div className="overlay">
                 {" "}
-                title: {serie.title} <br /> title original:{" "}
-                {serie.original_title} <br />
-                Voto: {Math.ceil(serie.vote_average / 2)} <br />
-                overview: {serie.overview}
+                title: {serie.name} <br /> title original: {serie.original_name}{" "}
+                <br />
+                <div className="stars">
+                  Voto: {voteInStars(Math.ceil(serie.vote_average / 2))} <br />
+                </div>
+                <p className="text-wrap">overview: {serie.overview}</p>
                 {langs.includes(serie.original_language) ? (
                   <img
                     className="flag-img"
